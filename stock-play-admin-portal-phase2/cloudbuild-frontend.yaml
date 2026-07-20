@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--platform'
+      - 'linux/amd64'
+      - '--build-arg'
+      - 'REACT_APP_API_URL=${_BACKEND_URL}'
+      - '-t'
+      - '${_FULL_IMAGE}'
+      - '-f'
+      - 'Dockerfile.frontend'
+      - '.'
+
+images:
+  - '${_FULL_IMAGE}'

@@ -1,0 +1,235 @@
+.landing-page {
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(11,77,162,0.06)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.landing-header {
+  padding: 24px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 16px;
+  min-height: 160px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.brand-ed {
+  color: #4ade80;
+}
+
+.brand-name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.logo-img {
+  width: clamp(140px, 16vw, 190px);
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo-text {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 52px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  transform: skew(-8deg);
+}
+
+.logo-text.brand-name {
+  transform: translate(-50%, -50%) skew(-8deg);
+}
+
+.logo-text-primary {
+  color: #0b4da2;
+}
+
+.logo-text-accent {
+  color: #83c441;
+}
+
+.btn-login {
+  background-color: white;
+  color: #0f4cbd;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  right: 0;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 120px 0 160px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #2453c3;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.gradient-text {
+  color: #2453c3;
+}
+
+.hero-description {
+  font-size: 20px;
+  color: #475569;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn-primary {
+  background-color: #0f4cbd;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-buttons .btn-secondary {
+  background-color: rgba(15, 76, 189, 0.06);
+  color: #0f4cbd;
+  border: 2px solid rgba(15, 76, 189, 0.2);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: rgba(15, 76, 189, 0.1);
+  border-color: rgba(15, 76, 189, 0.35);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.landing-footer {
+  padding: 40px 0;
+  text-align: center;
+  color: #64748b;
+  border-top: 1px solid rgba(15, 76, 189, 0.12);
+}
+
+.landing-footer p {
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .btn-login {
+    position: static;
+  }
+
+  .header-logo,
+  .brand-name {
+    position: static;
+    transform: none;
+  }
+
+  .logo-text.brand-name {
+    transform: skew(-8deg);
+  }
+  .logo-img {
+    width: 180px;
+  }
+
+  .logo-text {
+    font-size: 40px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+  }
+  
+  .hero-section {
+    padding: 80px 0 100px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}

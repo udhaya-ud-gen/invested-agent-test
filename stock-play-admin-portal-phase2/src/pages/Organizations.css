@@ -1,0 +1,448 @@
+.organizations-page {
+  padding: 32px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.table-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.search-bar svg {
+  position: absolute;
+  left: 14px;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px 10px 44px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.advanced-filters {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.organizations-page .table-container th.metric-col,
+.organizations-page .table-container td.metric-col,
+.organizations-page .table-container th.actions-col,
+.organizations-page .table-container td.actions-col {
+  text-align: center;
+}
+
+.organizations-page .table-container td.actions-col .action-buttons {
+  justify-content: center;
+}
+
+.organizations-page .table-container tbody tr {
+  cursor: pointer;
+}
+
+.organizations-page .table-container tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: transparent;
+}
+
+.view-btn {
+  color: var(--primary-color);
+}
+
+.view-btn:hover {
+  background-color: #dbeafe;
+}
+
+.edit-btn {
+  color: var(--warning-color);
+}
+
+.edit-btn:hover {
+  background-color: #fef3c7;
+}
+
+.delete-btn {
+  color: var(--danger-color);
+}
+
+.delete-btn:hover {
+  background-color: #fee2e2;
+}
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* Scoped to Create Organization modal only */
+.modal.organizations-create-modal {
+  width: min(96vw, 1500px) !important;
+  max-width: 1500px !important;
+  box-sizing: border-box;
+  max-height: 88vh !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-gutter: auto;
+  padding: 10px 14px;
+}
+
+.modal.organizations-create-modal::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.organizations-create-modal-overlay {
+  align-items: center;
+  overflow-y: hidden;
+  padding: 10px 0;
+}
+
+/* Hide only this modal overlay scrollbar UI */
+.organizations-create-modal-overlay {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.organizations-create-modal-overlay::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.organizations-address-line-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.organizations-address-line-row .input-group {
+  margin-bottom: 0;
+}
+
+.organizations-address-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.organizations-address-grid .input-group {
+  margin-bottom: 0;
+}
+
+.organizations-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.organizations-create-modal .organizations-section-card {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+}
+
+.organizations-create-modal .organizations-section-card h3 {
+  margin: 0 0 10px 0 !important;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.organizations-create-modal .organizations-contact-card {
+  padding: 10px;
+  border: 1px solid #dbe4f0;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.organizations-create-modal .organizations-contact-card h4 {
+  margin: 0 0 8px 0 !important;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.organizations-contact-card .input-group:last-child {
+  margin-bottom: 0;
+}
+
+.organizations-create-modal .input-group {
+  margin-bottom: 4px;
+}
+
+.organizations-create-modal .input-group label {
+  margin-bottom: 2px;
+}
+
+.organizations-create-modal .input-group input,
+.organizations-create-modal .input-group select {
+  padding: 6px 9px;
+}
+
+.organizations-create-modal .modal-header {
+  margin-bottom: 10px;
+}
+
+.organizations-create-modal h3 {
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.organizations-create-modal h4 {
+  margin-top: 6px !important;
+  margin-bottom: 4px !important;
+}
+
+.organizations-create-modal .modal-footer {
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.organizations-delete-modal {
+  width: min(92vw, 420px);
+  max-width: 420px;
+  border-radius: 18px;
+}
+
+.organizations-delete-modal-overlay {
+  padding: 16px;
+}
+
+.organizations-delete-modal .modal-header {
+  padding: 20px 24px 0;
+  border-bottom: none;
+}
+
+.organizations-delete-modal .modal-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.organizations-delete-modal .modal-close {
+  color: var(--text-secondary);
+}
+
+.organizations-delete-modal .modal-body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px 18px;
+}
+
+.organizations-delete-modal-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.organizations-delete-modal-message {
+  font-size: 15px;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.organizations-delete-modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 12px;
+}
+
+.organizations-delete-modal .modal-footer .btn {
+  min-width: 112px;
+}
+
+@media (max-width: 768px) {
+  .organizations-page {
+    padding: 20px 16px;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar,
+  .toolbar-actions {
+    width: 100%;
+  }
+
+  .toolbar-actions .btn {
+    flex: 1 1 160px;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .organizations-create-modal-overlay {
+    padding: 12px 0;
+  }
+
+  .organizations-address-line-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .organizations-address-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .organizations-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .organizations-delete-modal {
+    width: min(94vw, 420px);
+    max-width: 420px;
+  }
+
+  .organizations-delete-modal .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .organizations-delete-modal-message {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .organizations-page {
+    padding: 16px 12px;
+  }
+
+  .page-title h2 {
+    font-size: 20px;
+  }
+
+  .search-bar {
+    min-width: 0;
+  }
+
+  .toolbar-actions {
+    flex-direction: column;
+  }
+
+  .toolbar-actions .btn {
+    width: 100%;
+  }
+
+  .organizations-delete-modal-overlay {
+    padding: 10px;
+  }
+
+  .organizations-delete-modal {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .organizations-delete-modal .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .organizations-delete-modal-message {
+    font-size: 15px;
+  }
+}
+
